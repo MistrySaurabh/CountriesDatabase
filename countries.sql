@@ -1,0 +1,318 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Feb 04, 2019 at 06:50 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `countries`
+--
+
+CREATE TABLE `countries` (
+  `id` int(255) NOT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `iso_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `capital` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `continent` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `currency_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `countries`
+--
+
+INSERT INTO `countries` (`id`, `code`, `iso_code`, `name`, `capital`, `continent`, `phone_code`, `currency_code`) VALUES
+(1, 'BD', 'BGD', 'Bangladesh', 'Dhaka', 'AS', '880', 'BDT'),
+(2, 'BE', 'BEL', 'Belgium', 'Brussels', 'EU', '32', 'EUR'),
+(3, 'BF', 'BFA', 'Burkina Faso', 'Ouagadougou', 'AF', '226', 'XOF'),
+(4, 'BG', 'BGR', 'Bulgaria', 'Sofia', 'EU', '359', 'BGN'),
+(5, 'BA', 'BIH', 'Bosnia and Herzegovina', 'Sarajevo', 'EU', '387', 'BAM'),
+(6, 'BB', 'BRB', 'Barbados', 'Bridgetown', 'NA', '+1-246', 'BBD'),
+(7, 'WF', 'WLF', 'Wallis and Futuna', 'Mata Utu', 'OC', '681', 'XPF'),
+(8, 'BL', 'BLM', 'Saint Barthelemy', 'Gustavia', 'NA', '590', 'EUR'),
+(9, 'BM', 'BMU', 'Bermuda', 'Hamilton', 'NA', '+1-441', 'BMD'),
+(10, 'BN', 'BRN', 'Brunei', 'Bandar Seri Begawan', 'AS', '673', 'BND'),
+(11, 'BO', 'BOL', 'Bolivia', 'Sucre', 'SA', '591', 'BOB'),
+(12, 'BH', 'BHR', 'Bahrain', 'Manama', 'AS', '973', 'BHD'),
+(13, 'BI', 'BDI', 'Burundi', 'Bujumbura', 'AF', '257', 'BIF'),
+(14, 'BJ', 'BEN', 'Benin', 'Porto-Novo', 'AF', '229', 'XOF'),
+(15, 'BT', 'BTN', 'Bhutan', 'Thimphu', 'AS', '975', 'BTN'),
+(16, 'JM', 'JAM', 'Jamaica', 'Kingston', 'NA', '+1-876', 'JMD'),
+(17, 'BV', 'BVT', 'Bouvet Island', '', 'AN', '', 'NOK'),
+(18, 'BW', 'BWA', 'Botswana', 'Gaborone', 'AF', '267', 'BWP'),
+(19, 'WS', 'WSM', 'Samoa', 'Apia', 'OC', '685', 'WST'),
+(20, 'BQ', 'BES', 'Bonaire, Saint Eustatius and Saba ', '', 'NA', '599', 'USD'),
+(21, 'BR', 'BRA', 'Brazil', 'Brasilia', 'SA', '55', 'BRL'),
+(22, 'BS', 'BHS', 'Bahamas', 'Nassau', 'NA', '+1-242', 'BSD'),
+(23, 'JE', 'JEY', 'Jersey', 'Saint Helier', 'EU', '+44-1534', 'GBP'),
+(24, 'BY', 'BLR', 'Belarus', 'Minsk', 'EU', '375', 'BYR'),
+(25, 'BZ', 'BLZ', 'Belize', 'Belmopan', 'NA', '501', 'BZD'),
+(26, 'RU', 'RUS', 'Russia', 'Moscow', 'EU', '7', 'RUB'),
+(27, 'RW', 'RWA', 'Rwanda', 'Kigali', 'AF', '250', 'RWF'),
+(28, 'RS', 'SRB', 'Serbia', 'Belgrade', 'EU', '381', 'RSD'),
+(29, 'TL', 'TLS', 'East Timor', 'Dili', 'OC', '670', 'USD'),
+(30, 'RE', 'REU', 'Reunion', 'Saint-Denis', 'AF', '262', 'EUR'),
+(31, 'TM', 'TKM', 'Turkmenistan', 'Ashgabat', 'AS', '993', 'TMT'),
+(32, 'TJ', 'TJK', 'Tajikistan', 'Dushanbe', 'AS', '992', 'TJS'),
+(33, 'RO', 'ROU', 'Romania', 'Bucharest', 'EU', '40', 'RON'),
+(34, 'TK', 'TKL', 'Tokelau', '', 'OC', '690', 'NZD'),
+(35, 'GW', 'GNB', 'Guinea-Bissau', 'Bissau', 'AF', '245', 'XOF'),
+(36, 'GU', 'GUM', 'Guam', 'Hagatna', 'OC', '+1-671', 'USD'),
+(37, 'GT', 'GTM', 'Guatemala', 'Guatemala City', 'NA', '502', 'GTQ'),
+(38, 'GS', 'SGS', 'South Georgia and the South Sandwich Islands', 'Grytviken', 'AN', '', 'GBP'),
+(39, 'GR', 'GRC', 'Greece', 'Athens', 'EU', '30', 'EUR'),
+(40, 'GQ', 'GNQ', 'Equatorial Guinea', 'Malabo', 'AF', '240', 'XAF'),
+(41, 'GP', 'GLP', 'Guadeloupe', 'Basse-Terre', 'NA', '590', 'EUR'),
+(42, 'JP', 'JPN', 'Japan', 'Tokyo', 'AS', '81', 'JPY'),
+(43, 'GY', 'GUY', 'Guyana', 'Georgetown', 'SA', '592', 'GYD'),
+(44, 'GG', 'GGY', 'Guernsey', 'St Peter Port', 'EU', '+44-1481', 'GBP'),
+(45, 'GF', 'GUF', 'French Guiana', 'Cayenne', 'SA', '594', 'EUR'),
+(46, 'GE', 'GEO', 'Georgia', 'Tbilisi', 'AS', '995', 'GEL'),
+(47, 'GD', 'GRD', 'Grenada', 'St. George\'s', 'NA', '+1-473', 'XCD'),
+(48, 'GB', 'GBR', 'United Kingdom', 'London', 'EU', '44', 'GBP'),
+(49, 'GA', 'GAB', 'Gabon', 'Libreville', 'AF', '241', 'XAF'),
+(50, 'SV', 'SLV', 'El Salvador', 'San Salvador', 'NA', '503', 'USD'),
+(51, 'GN', 'GIN', 'Guinea', 'Conakry', 'AF', '224', 'GNF'),
+(52, 'GM', 'GMB', 'Gambia', 'Banjul', 'AF', '220', 'GMD'),
+(53, 'GL', 'GRL', 'Greenland', 'Nuuk', 'NA', '299', 'DKK'),
+(54, 'GI', 'GIB', 'Gibraltar', 'Gibraltar', 'EU', '350', 'GIP'),
+(55, 'GH', 'GHA', 'Ghana', 'Accra', 'AF', '233', 'GHS'),
+(56, 'OM', 'OMN', 'Oman', 'Muscat', 'AS', '968', 'OMR'),
+(57, 'TN', 'TUN', 'Tunisia', 'Tunis', 'AF', '216', 'TND'),
+(58, 'JO', 'JOR', 'Jordan', 'Amman', 'AS', '962', 'JOD'),
+(59, 'HR', 'HRV', 'Croatia', 'Zagreb', 'EU', '385', 'HRK'),
+(60, 'HT', 'HTI', 'Haiti', 'Port-au-Prince', 'NA', '509', 'HTG'),
+(61, 'HU', 'HUN', 'Hungary', 'Budapest', 'EU', '36', 'HUF'),
+(62, 'HK', 'HKG', 'Hong Kong', 'Hong Kong', 'AS', '852', 'HKD'),
+(63, 'HN', 'HND', 'Honduras', 'Tegucigalpa', 'NA', '504', 'HNL'),
+(64, 'HM', 'HMD', 'Heard Island and McDonald Islands', '', 'AN', ' ', 'AUD'),
+(65, 'VE', 'VEN', 'Venezuela', 'Caracas', 'SA', '58', 'VEF'),
+(66, 'PR', 'PRI', 'Puerto Rico', 'San Juan', 'NA', '+1-787 and 1-939', 'USD'),
+(67, 'PS', 'PSE', 'Palestinian Territory', 'East Jerusalem', 'AS', '970', 'ILS'),
+(68, 'PW', 'PLW', 'Palau', 'Melekeok', 'OC', '680', 'USD'),
+(69, 'PT', 'PRT', 'Portugal', 'Lisbon', 'EU', '351', 'EUR'),
+(70, 'SJ', 'SJM', 'Svalbard and Jan Mayen', 'Longyearbyen', 'EU', '47', 'NOK'),
+(71, 'PY', 'PRY', 'Paraguay', 'Asuncion', 'SA', '595', 'PYG'),
+(72, 'IQ', 'IRQ', 'Iraq', 'Baghdad', 'AS', '964', 'IQD'),
+(73, 'PA', 'PAN', 'Panama', 'Panama City', 'NA', '507', 'PAB'),
+(74, 'PF', 'PYF', 'French Polynesia', 'Papeete', 'OC', '689', 'XPF'),
+(75, 'PG', 'PNG', 'Papua New Guinea', 'Port Moresby', 'OC', '675', 'PGK'),
+(76, 'PE', 'PER', 'Peru', 'Lima', 'SA', '51', 'PEN'),
+(77, 'PK', 'PAK', 'Pakistan', 'Islamabad', 'AS', '92', 'PKR'),
+(78, 'PH', 'PHL', 'Philippines', 'Manila', 'AS', '63', 'PHP'),
+(79, 'PN', 'PCN', 'Pitcairn', 'Adamstown', 'OC', '870', 'NZD'),
+(80, 'PL', 'POL', 'Poland', 'Warsaw', 'EU', '48', 'PLN'),
+(81, 'PM', 'SPM', 'Saint Pierre and Miquelon', 'Saint-Pierre', 'NA', '508', 'EUR'),
+(82, 'ZM', 'ZMB', 'Zambia', 'Lusaka', 'AF', '260', 'ZMK'),
+(83, 'EH', 'ESH', 'Western Sahara', 'El-Aaiun', 'AF', '212', 'MAD'),
+(84, 'EE', 'EST', 'Estonia', 'Tallinn', 'EU', '372', 'EUR'),
+(85, 'EG', 'EGY', 'Egypt', 'Cairo', 'AF', '20', 'EGP'),
+(86, 'ZA', 'ZAF', 'South Africa', 'Pretoria', 'AF', '27', 'ZAR'),
+(87, 'EC', 'ECU', 'Ecuador', 'Quito', 'SA', '593', 'USD'),
+(88, 'IT', 'ITA', 'Italy', 'Rome', 'EU', '39', 'EUR'),
+(89, 'VN', 'VNM', 'Vietnam', 'Hanoi', 'AS', '84', 'VND'),
+(90, 'SB', 'SLB', 'Solomon Islands', 'Honiara', 'OC', '677', 'SBD'),
+(91, 'ET', 'ETH', 'Ethiopia', 'Addis Ababa', 'AF', '251', 'ETB'),
+(92, 'SO', 'SOM', 'Somalia', 'Mogadishu', 'AF', '252', 'SOS'),
+(93, 'ZW', 'ZWE', 'Zimbabwe', 'Harare', 'AF', '263', 'ZWL'),
+(94, 'SA', 'SAU', 'Saudi Arabia', 'Riyadh', 'AS', '966', 'SAR'),
+(95, 'ES', 'ESP', 'Spain', 'Madrid', 'EU', '34', 'EUR'),
+(96, 'ER', 'ERI', 'Eritrea', 'Asmara', 'AF', '291', 'ERN'),
+(97, 'ME', 'MNE', 'Montenegro', 'Podgorica', 'EU', '382', 'EUR'),
+(98, 'MD', 'MDA', 'Moldova', 'Chisinau', 'EU', '373', 'MDL'),
+(99, 'MG', 'MDG', 'Madagascar', 'Antananarivo', 'AF', '261', 'MGA'),
+(100, 'MF', 'MAF', 'Saint Martin', 'Marigot', 'NA', '590', 'EUR'),
+(101, 'MA', 'MAR', 'Morocco', 'Rabat', 'AF', '212', 'MAD'),
+(102, 'MC', 'MCO', 'Monaco', 'Monaco', 'EU', '377', 'EUR'),
+(103, 'UZ', 'UZB', 'Uzbekistan', 'Tashkent', 'AS', '998', 'UZS'),
+(104, 'MM', 'MMR', 'Myanmar', 'Nay Pyi Taw', 'AS', '95', 'MMK'),
+(105, 'ML', 'MLI', 'Mali', 'Bamako', 'AF', '223', 'XOF'),
+(106, 'MO', 'MAC', 'Macao', 'Macao', 'AS', '853', 'MOP'),
+(107, 'MN', 'MNG', 'Mongolia', 'Ulan Bator', 'AS', '976', 'MNT'),
+(108, 'MH', 'MHL', 'Marshall Islands', 'Majuro', 'OC', '692', 'USD'),
+(109, 'MK', 'MKD', 'Macedonia', 'Skopje', 'EU', '389', 'MKD'),
+(110, 'MU', 'MUS', 'Mauritius', 'Port Louis', 'AF', '230', 'MUR'),
+(111, 'MT', 'MLT', 'Malta', 'Valletta', 'EU', '356', 'EUR'),
+(112, 'MW', 'MWI', 'Malawi', 'Lilongwe', 'AF', '265', 'MWK'),
+(113, 'MV', 'MDV', 'Maldives', 'Male', 'AS', '960', 'MVR'),
+(114, 'MQ', 'MTQ', 'Martinique', 'Fort-de-France', 'NA', '596', 'EUR'),
+(115, 'MP', 'MNP', 'Northern Mariana Islands', 'Saipan', 'OC', '+1-670', 'USD'),
+(116, 'MS', 'MSR', 'Montserrat', 'Plymouth', 'NA', '+1-664', 'XCD'),
+(117, 'MR', 'MRT', 'Mauritania', 'Nouakchott', 'AF', '222', 'MRO'),
+(118, 'IM', 'IMN', 'Isle of Man', 'Douglas, Isle of Man', 'EU', '+44-1624', 'GBP'),
+(119, 'UG', 'UGA', 'Uganda', 'Kampala', 'AF', '256', 'UGX'),
+(120, 'TZ', 'TZA', 'Tanzania', 'Dodoma', 'AF', '255', 'TZS'),
+(121, 'MY', 'MYS', 'Malaysia', 'Kuala Lumpur', 'AS', '60', 'MYR'),
+(122, 'MX', 'MEX', 'Mexico', 'Mexico City', 'NA', '52', 'MXN'),
+(123, 'IL', 'ISR', 'Israel', 'Jerusalem', 'AS', '972', 'ILS'),
+(124, 'FR', 'FRA', 'France', 'Paris', 'EU', '33', 'EUR'),
+(125, 'IO', 'IOT', 'British Indian Ocean Territory', 'Diego Garcia', 'AS', '246', 'USD'),
+(126, 'SH', 'SHN', 'Saint Helena', 'Jamestown', 'AF', '290', 'SHP'),
+(127, 'FI', 'FIN', 'Finland', 'Helsinki', 'EU', '358', 'EUR'),
+(128, 'FJ', 'FJI', 'Fiji', 'Suva', 'OC', '679', 'FJD'),
+(129, 'FK', 'FLK', 'Falkland Islands', 'Stanley', 'SA', '500', 'FKP'),
+(130, 'FM', 'FSM', 'Micronesia', 'Palikir', 'OC', '691', 'USD'),
+(131, 'FO', 'FRO', 'Faroe Islands', 'Torshavn', 'EU', '298', 'DKK'),
+(132, 'NI', 'NIC', 'Nicaragua', 'Managua', 'NA', '505', 'NIO'),
+(133, 'NL', 'NLD', 'Netherlands', 'Amsterdam', 'EU', '31', 'EUR'),
+(134, 'NO', 'NOR', 'Norway', 'Oslo', 'EU', '47', 'NOK'),
+(135, 'NA', 'NAM', 'Namibia', 'Windhoek', 'AF', '264', 'NAD'),
+(136, 'VU', 'VUT', 'Vanuatu', 'Port Vila', 'OC', '678', 'VUV'),
+(137, 'NC', 'NCL', 'New Caledonia', 'Noumea', 'OC', '687', 'XPF'),
+(138, 'NE', 'NER', 'Niger', 'Niamey', 'AF', '227', 'XOF'),
+(139, 'NF', 'NFK', 'Norfolk Island', 'Kingston', 'OC', '672', 'AUD'),
+(140, 'NG', 'NGA', 'Nigeria', 'Abuja', 'AF', '234', 'NGN'),
+(141, 'NZ', 'NZL', 'New Zealand', 'Wellington', 'OC', '64', 'NZD'),
+(142, 'NP', 'NPL', 'Nepal', 'Kathmandu', 'AS', '977', 'NPR'),
+(143, 'NR', 'NRU', 'Nauru', 'Yaren', 'OC', '674', 'AUD'),
+(144, 'NU', 'NIU', 'Niue', 'Alofi', 'OC', '683', 'NZD'),
+(145, 'CK', 'COK', 'Cook Islands', 'Avarua', 'OC', '682', 'NZD'),
+(146, 'XK', 'XKX', 'Kosovo', 'Pristina', 'EU', '', 'EUR'),
+(147, 'CI', 'CIV', 'Ivory Coast', 'Yamoussoukro', 'AF', '225', 'XOF'),
+(148, 'CH', 'CHE', 'Switzerland', 'Berne', 'EU', '41', 'CHF'),
+(149, 'CO', 'COL', 'Colombia', 'Bogota', 'SA', '57', 'COP'),
+(150, 'CN', 'CHN', 'China', 'Beijing', 'AS', '86', 'CNY'),
+(151, 'CM', 'CMR', 'Cameroon', 'Yaounde', 'AF', '237', 'XAF'),
+(152, 'CL', 'CHL', 'Chile', 'Santiago', 'SA', '56', 'CLP'),
+(153, 'CC', 'CCK', 'Cocos Islands', 'West Island', 'AS', '61', 'AUD'),
+(154, 'CA', 'CAN', 'Canada', 'Ottawa', 'NA', '1', 'CAD'),
+(155, 'CG', 'COG', 'Republic of the Congo', 'Brazzaville', 'AF', '242', 'XAF'),
+(156, 'CF', 'CAF', 'Central African Republic', 'Bangui', 'AF', '236', 'XAF'),
+(157, 'CD', 'COD', 'Democratic Republic of the Congo', 'Kinshasa', 'AF', '243', 'CDF'),
+(158, 'CZ', 'CZE', 'Czech Republic', 'Prague', 'EU', '420', 'CZK'),
+(159, 'CY', 'CYP', 'Cyprus', 'Nicosia', 'EU', '357', 'EUR'),
+(160, 'CX', 'CXR', 'Christmas Island', 'Flying Fish Cove', 'AS', '61', 'AUD'),
+(161, 'CR', 'CRI', 'Costa Rica', 'San Jose', 'NA', '506', 'CRC'),
+(162, 'CW', 'CUW', 'Curacao', ' Willemstad', 'NA', '599', 'ANG'),
+(163, 'CV', 'CPV', 'Cape Verde', 'Praia', 'AF', '238', 'CVE'),
+(164, 'CU', 'CUB', 'Cuba', 'Havana', 'NA', '53', 'CUP'),
+(165, 'SZ', 'SWZ', 'Swaziland', 'Mbabane', 'AF', '268', 'SZL'),
+(166, 'SY', 'SYR', 'Syria', 'Damascus', 'AS', '963', 'SYP'),
+(167, 'SX', 'SXM', 'Sint Maarten', 'Philipsburg', 'NA', '599', 'ANG'),
+(168, 'KG', 'KGZ', 'Kyrgyzstan', 'Bishkek', 'AS', '996', 'KGS'),
+(169, 'KE', 'KEN', 'Kenya', 'Nairobi', 'AF', '254', 'KES'),
+(170, 'SS', 'SSD', 'South Sudan', 'Juba', 'AF', '211', 'SSP'),
+(171, 'SR', 'SUR', 'Suriname', 'Paramaribo', 'SA', '597', 'SRD'),
+(172, 'KI', 'KIR', 'Kiribati', 'Tarawa', 'OC', '686', 'AUD'),
+(173, 'KH', 'KHM', 'Cambodia', 'Phnom Penh', 'AS', '855', 'KHR'),
+(174, 'KN', 'KNA', 'Saint Kitts and Nevis', 'Basseterre', 'NA', '+1-869', 'XCD'),
+(175, 'KM', 'COM', 'Comoros', 'Moroni', 'AF', '269', 'KMF'),
+(176, 'ST', 'STP', 'Sao Tome and Principe', 'Sao Tome', 'AF', '239', 'STD'),
+(177, 'SK', 'SVK', 'Slovakia', 'Bratislava', 'EU', '421', 'EUR'),
+(178, 'KR', 'KOR', 'South Korea', 'Seoul', 'AS', '82', 'KRW'),
+(179, 'SI', 'SVN', 'Slovenia', 'Ljubljana', 'EU', '386', 'EUR'),
+(180, 'KP', 'PRK', 'North Korea', 'Pyongyang', 'AS', '850', 'KPW'),
+(181, 'KW', 'KWT', 'Kuwait', 'Kuwait City', 'AS', '965', 'KWD'),
+(182, 'SN', 'SEN', 'Senegal', 'Dakar', 'AF', '221', 'XOF'),
+(183, 'SM', 'SMR', 'San Marino', 'San Marino', 'EU', '378', 'EUR'),
+(184, 'SL', 'SLE', 'Sierra Leone', 'Freetown', 'AF', '232', 'SLL'),
+(185, 'SC', 'SYC', 'Seychelles', 'Victoria', 'AF', '248', 'SCR'),
+(186, 'KZ', 'KAZ', 'Kazakhstan', 'Astana', 'AS', '7', 'KZT'),
+(187, 'KY', 'CYM', 'Cayman Islands', 'George Town', 'NA', '+1-345', 'KYD'),
+(188, 'SG', 'SGP', 'Singapore', 'Singapur', 'AS', '65', 'SGD'),
+(189, 'SE', 'SWE', 'Sweden', 'Stockholm', 'EU', '46', 'SEK'),
+(190, 'SD', 'SDN', 'Sudan', 'Khartoum', 'AF', '249', 'SDG'),
+(191, 'DO', 'DOM', 'Dominican Republic', 'Santo Domingo', 'NA', '+1-809 and 1-829', 'DOP'),
+(192, 'DM', 'DMA', 'Dominica', 'Roseau', 'NA', '+1-767', 'XCD'),
+(193, 'DJ', 'DJI', 'Djibouti', 'Djibouti', 'AF', '253', 'DJF'),
+(194, 'DK', 'DNK', 'Denmark', 'Copenhagen', 'EU', '45', 'DKK'),
+(195, 'VG', 'VGB', 'British Virgin Islands', 'Road Town', 'NA', '+1-284', 'USD'),
+(196, 'DE', 'DEU', 'Germany', 'Berlin', 'EU', '49', 'EUR'),
+(197, 'YE', 'YEM', 'Yemen', 'Sanaa', 'AS', '967', 'YER'),
+(198, 'DZ', 'DZA', 'Algeria', 'Algiers', 'AF', '213', 'DZD'),
+(199, 'US', 'USA', 'United States', 'Washington', 'NA', '1', 'USD'),
+(200, 'UY', 'URY', 'Uruguay', 'Montevideo', 'SA', '598', 'UYU'),
+(201, 'YT', 'MYT', 'Mayotte', 'Mamoudzou', 'AF', '262', 'EUR'),
+(202, 'UM', 'UMI', 'United States Minor Outlying Islands', '', 'OC', '1', 'USD'),
+(203, 'LB', 'LBN', 'Lebanon', 'Beirut', 'AS', '961', 'LBP'),
+(204, 'LC', 'LCA', 'Saint Lucia', 'Castries', 'NA', '+1-758', 'XCD'),
+(205, 'LA', 'LAO', 'Laos', 'Vientiane', 'AS', '856', 'LAK'),
+(206, 'TV', 'TUV', 'Tuvalu', 'Funafuti', 'OC', '688', 'AUD'),
+(207, 'TW', 'TWN', 'Taiwan', 'Taipei', 'AS', '886', 'TWD'),
+(208, 'TT', 'TTO', 'Trinidad and Tobago', 'Port of Spain', 'NA', '+1-868', 'TTD'),
+(209, 'TR', 'TUR', 'Turkey', 'Ankara', 'AS', '90', 'TRY'),
+(210, 'LK', 'LKA', 'Sri Lanka', 'Colombo', 'AS', '94', 'LKR'),
+(211, 'LI', 'LIE', 'Liechtenstein', 'Vaduz', 'EU', '423', 'CHF'),
+(212, 'LV', 'LVA', 'Latvia', 'Riga', 'EU', '371', 'EUR'),
+(213, 'TO', 'TON', 'Tonga', 'Nuku\'alofa', 'OC', '676', 'TOP'),
+(214, 'LT', 'LTU', 'Lithuania', 'Vilnius', 'EU', '370', 'LTL'),
+(215, 'LU', 'LUX', 'Luxembourg', 'Luxembourg', 'EU', '352', 'EUR'),
+(216, 'LR', 'LBR', 'Liberia', 'Monrovia', 'AF', '231', 'LRD'),
+(217, 'LS', 'LSO', 'Lesotho', 'Maseru', 'AF', '266', 'LSL'),
+(218, 'TH', 'THA', 'Thailand', 'Bangkok', 'AS', '66', 'THB'),
+(219, 'TF', 'ATF', 'French Southern Territories', 'Port-aux-Francais', 'AN', '', 'EUR'),
+(220, 'TG', 'TGO', 'Togo', 'Lome', 'AF', '228', 'XOF'),
+(221, 'TD', 'TCD', 'Chad', 'N\'Djamena', 'AF', '235', 'XAF'),
+(222, 'TC', 'TCA', 'Turks and Caicos Islands', 'Cockburn Town', 'NA', '+1-649', 'USD'),
+(223, 'LY', 'LBY', 'Libya', 'Tripolis', 'AF', '218', 'LYD'),
+(224, 'VA', 'VAT', 'Vatican', 'Vatican City', 'EU', '379', 'EUR'),
+(225, 'VC', 'VCT', 'Saint Vincent and the Grenadines', 'Kingstown', 'NA', '+1-784', 'XCD'),
+(226, 'AE', 'ARE', 'United Arab Emirates', 'Abu Dhabi', 'AS', '971', 'AED'),
+(227, 'AD', 'AND', 'Andorra', 'Andorra la Vella', 'EU', '376', 'EUR'),
+(228, 'AG', 'ATG', 'Antigua and Barbuda', 'St. John\'s', 'NA', '+1-268', 'XCD'),
+(229, 'AF', 'AFG', 'Afghanistan', 'Kabul', 'AS', '93', 'AFN'),
+(230, 'AI', 'AIA', 'Anguilla', 'The Valley', 'NA', '+1-264', 'XCD'),
+(231, 'VI', 'VIR', 'U.S. Virgin Islands', 'Charlotte Amalie', 'NA', '+1-340', 'USD'),
+(232, 'IS', 'ISL', 'Iceland', 'Reykjavik', 'EU', '354', 'ISK'),
+(233, 'IR', 'IRN', 'Iran', 'Tehran', 'AS', '98', 'IRR'),
+(234, 'AM', 'ARM', 'Armenia', 'Yerevan', 'AS', '374', 'AMD'),
+(235, 'AL', 'ALB', 'Albania', 'Tirana', 'EU', '355', 'ALL'),
+(236, 'AO', 'AGO', 'Angola', 'Luanda', 'AF', '244', 'AOA'),
+(237, 'AQ', 'ATA', 'Antarctica', '', 'AN', '672', 'USD'),
+(238, 'AS', 'ASM', 'American Samoa', 'Pago Pago', 'OC', '+1-684', 'USD'),
+(239, 'AR', 'ARG', 'Argentina', 'Buenos Aires', 'SA', '54', 'ARS'),
+(240, 'AU', 'AUS', 'Australia', 'Canberra', 'OC', '61', 'AUD'),
+(241, 'AT', 'AUT', 'Austria', 'Vienna', 'EU', '43', 'EUR'),
+(242, 'AW', 'ABW', 'Aruba', 'Oranjestad', 'NA', '297', 'AWG'),
+(243, 'IN', 'IND', 'India', 'New Delhi', 'AS', '91', 'INR'),
+(244, 'AX', 'ALA', 'Aland Islands', 'Mariehamn', 'EU', '+358-18', 'EUR'),
+(245, 'AZ', 'AZE', 'Azerbaijan', 'Baku', 'AS', '994', 'AZN'),
+(246, 'IE', 'IRL', 'Ireland', 'Dublin', 'EU', '353', 'EUR'),
+(247, 'ID', 'IDN', 'Indonesia', 'Jakarta', 'AS', '62', 'IDR'),
+(248, 'UA', 'UKR', 'Ukraine', 'Kiev', 'EU', '380', 'UAH'),
+(249, 'QA', 'QAT', 'Qatar', 'Doha', 'AS', '974', 'QAR'),
+(250, 'MZ', 'MOZ', 'Mozambique', 'Maputo', 'AF', '258', 'MZN');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `countries`
+--
+ALTER TABLE `countries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `countries`
+--
+ALTER TABLE `countries`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
